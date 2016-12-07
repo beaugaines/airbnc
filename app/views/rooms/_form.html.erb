@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-md-8 col-md-offset-1">
+    <%= bootstrap_form_for(@room) do |f| %>
+    <%= f.text_field :title %>
+    <%= f.text_field :description %>
+
+
+    <div class="geocomplete">
+      <%= label_tag :geocomplete, 'Enter your city' %>
+      <br>
+      <%= text_field_tag :geocomplete %>
+
+      <%= f.hidden_field :latitude, data: { geo: 'lat' } %>
+      <%= f.hidden_field :longitude, data: { geo: 'lng' } %>
+      <%= f.text_field :city, data: { geo: 'locality' } %>
+      <%= f.text_field :country, data: { geo: 'country' } %>
+
+      <div id="geocomplete-map"></div>
+    </div>
+
+    <%= f.submit %>
+
+    <% end %>
+
+  </div>
+</div>

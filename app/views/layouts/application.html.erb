@@ -6,6 +6,8 @@
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <script src="http://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_API_KEY'] %>&libraries=places"></script>
+  <%= javascript_include_tag '//cdnjs.cloudflare.com/ajax/libs/geocomplete/1.7.0/jquery.geocomplete.min.js' %>
 </head>
 <body>
   <header class="navbar navbar-fixed-top navbar-inverse">
@@ -27,7 +29,7 @@
               <li><%= link_to "Sign up", new_user_registration_path %></li>
             <% end %>
           </ul>
-        </div>  
+        </div>
       </nav>
     </div>
   </header>
