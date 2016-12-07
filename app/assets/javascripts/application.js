@@ -15,3 +15,14 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
+
+$(document).ready(function() {
+  $('#geocomplete').geocomplete({
+    map: '#geocomplete-map',
+    mapOptions: {
+      zoom: 10
+    },
+    details: 'form',
+    detailsAttribute: 'data-geo'
+  });
+});

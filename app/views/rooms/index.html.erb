@@ -1,5 +1,5 @@
 <div class='row'>
-    <div class='col-md-12'>
+    <div class='col-md-8'>
         <% @rooms.each do |room| %>
             <div class='col-md-6'>
                 <div class='room'>
@@ -8,7 +8,12 @@
                     <h1 class='roomname'><%= room.title %></h1>
                     <p>Private - 1 guest - <%= pluralize(rand(1..15),'review') %> - user img</p>
                 </div>
-            </div>    
+            </div>
+        <% end %>
+    </div>
+    <div class="col-md-4">
+        <% if current_user.host? %>
+            <%= link_to 'Add room', new_room_path, class: 'btn btn-primary' %>
         <% end %>
     </div>
 </div>
