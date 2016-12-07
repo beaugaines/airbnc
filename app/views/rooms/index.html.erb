@@ -1,11 +1,14 @@
 <div class='row'>
     <div class='col-md-12'>
         <% @rooms.each do |room| %>
-            <div class='room'>
-                <img src="http://placehold.it/350x250">
-                <h1><%= room.title %></h1> 
-                <p>Private - 1 guest - <%= pluralize(rand(1..15),'review') %></p>
-            </div>
+            <div class='col-md-6'>
+                <div class='room'>
+                    <p>price - favorite tag</p>
+                    <%=link_to image_tag("http://placehold.it/350x250"), room_path(room) %>
+                    <h1 class='roomname'><%= room.title %></h1>
+                    <p>Private - 1 guest - <%= pluralize(rand(1..15),'review') %> - user img</p>
+                </div>
+            </div>    
         <% end %>
     </div>
 </div>
