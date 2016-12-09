@@ -16,7 +16,7 @@
 //= require bootstrap-sprockets
 //= require_tree .
 
-$(document).ready(function() {
+$(document).on('turbolinks:load', function() {
   $('#geocomplete').geocomplete({
     map: '#geocomplete-map',
     mapOptions: {

@@ -13,12 +13,11 @@
   <header class="navbar navbar-fixed-top navbar-inverse">
     <div class="container">
       <div class='col-md-6'>
-        <%= link_to image_tag("http://placehold.it/40x40"), '#', id: "logo" %>
+        <%= link_to image_tag("http://placehold.it/70x70?text=A"), root_path, id: "logo" %>
       </div>
       <nav>
         <div class='col-md-6'>
           <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to "Home", root_path   %></li>
             <li><%= link_to "Help",   '#' %></li>
             <li><%= link_to 'Become a Host', '#' %></li>
             <% if user_signed_in? %>
