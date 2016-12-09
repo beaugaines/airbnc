@@ -7,7 +7,8 @@ u = User.create(
  first_name: 'Joe',
  last_name: 'Smith',
  email: 'joe@hotmail.com',
- password: 'password'
+ password: 'password',
+ role: 'host'
 )
 
 5.times do
@@ -33,7 +34,7 @@ users = User.all
 rand(3..8).times do
   room.reviews.create(
     user: users.sample,
-    body: Faker::Lorem.paragraph 
+    body: Faker::Lorem.paragraph
   )
 end
 end

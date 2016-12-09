@@ -25,13 +25,15 @@
   </div>
 </div>
 
-<!-- load map on edit view -->
 
+<!-- load map on edit view -->
 <script>
   $(document).on('turbolinks:load', function() {
-    $('#geocomplete-map').googleMap({
-      zoom: 10,
-      coords: [<%= @room.latitude %>, <%= @room.longitude %>]
-    });
+    <% if @room.latitude %>
+      $('#geocomplete-map').googleMap({
+        zoom: 10,
+        coords: [<%= @room.latitude %>, <%= @room.longitude %>]
+      });
+    <% end %>
   })
 </script>
