@@ -17,7 +17,7 @@
 //= require_tree .
 
 $(document).on('turbolinks:load', function() {
-  $('#geocomplete').geocomplete({
+  $('#user_location').geocomplete({
     map: '#geocomplete-map',
     mapOptions: {
       zoom: 10
@@ -25,4 +25,5 @@ $(document).on('turbolinks:load', function() {
     details: 'form',
     detailsAttribute: 'data-geo'
   });
+
 });
