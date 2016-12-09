@@ -20,6 +20,33 @@ class RoomsController < ApplicationController
       render :new
     end
   end
+  
+  def edit
+    @room = Room.find(params[:id])
+    
+  end
+  
+  def update
+    @room = Room.find(params[:id])
+    if @room.update(room_params)
+      flash[:notice] = "The room was updated"
+      redirect_to @room, notice: 'Room saved'
+    else
+      flash[:alert] = 'There was an error, please try again'
+      render :edit
+    end
+  end
+  
+  def destroy
+    @room = Room.find(params[:id])
+    if @room.destroy
+      flash[:notice] = "The room was deleted"
+      redirect_to root_path
+    else 
+      flash[:alert] = "Something's worng, please try again."
+      render :show
+    end
+  end
 
   private
   def room_params
