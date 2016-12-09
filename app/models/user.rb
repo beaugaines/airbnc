@@ -8,4 +8,5 @@ class User < ApplicationRecord
   enum role: [:guest, :host]
   has_many :rooms
   has_gravatar
+  has_many :reviews
 end

@@ -26,3 +26,4 @@ $(document).ready(function() {
     detailsAttribute: 'data-geo'
   });
 });
+
