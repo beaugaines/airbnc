@@ -22,7 +22,8 @@
             <li><%= link_to "Help",   '#' %></li>
             <li><%= link_to 'Become a Host', '#' %></li>
             <% if user_signed_in? %>
-              <li><%= link_to current_user.first_name, '#' %></li>
+              <li><%= image_tag current_user.gravatar_url, id: 'userimg' %></li>
+              <li><%= link_to current_user.first_name, edit_user_registration_path %></li>
               <li><%= link_to 'Sign out', destroy_user_session_path %></li>
             <% else %>
               <li><%= link_to "Log in", new_user_session_path %></li>
