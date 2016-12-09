@@ -26,3 +26,4 @@ $(document).on('turbolinks:load', function() {
     detailsAttribute: 'data-geo'
   });
 });
+
