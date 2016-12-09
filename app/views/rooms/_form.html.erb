@@ -6,9 +6,9 @@
 
 
     <div class="geocomplete">
-      <%= label_tag :geocomplete, 'Enter your city' %>
+      <%= label_tag :user_location, 'Enter your city' %>
       <br>
-      <%= text_field_tag :geocomplete %>
+      <%= text_field_tag :user_location %>
 
       <%= f.hidden_field :latitude, data: { geo: 'lat' } %>
       <%= f.hidden_field :longitude, data: { geo: 'lng' } %>
@@ -24,3 +24,14 @@
 
   </div>
 </div>
+
+<!-- load map on edit view -->
+
+<script>
+  $(document).on('turbolinks:load', function() {
+    $('#geocomplete-map').googleMap({
+      zoom: 10,
+      coords: [<%= @room.latitude %>, <%= @room.longitude %>]
+    });
+  })
+</script>

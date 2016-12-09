@@ -3,11 +3,11 @@
 <head>
   <title>Airbnc</title>
   <%= csrf_meta_tags %>
-
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_API_KEY'] %>&libraries=places"></script>
-  <%= javascript_include_tag '//cdnjs.cloudflare.com/ajax/libs/geocomplete/1.7.0/jquery.geocomplete.min.js' %>
+  <%= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/geocomplete/1.7.0/jquery.geocomplete.min.js' %>
+  <%= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/jquery.googlemap/1.5/jquery.googlemap.min.js' %>
 </head>
 <body>
   <header class="navbar navbar-fixed-top navbar-inverse">
@@ -23,7 +23,7 @@
             <% if user_signed_in? %>
               <li><%= image_tag current_user.gravatar_url, id: 'userimg' %></li>
               <li><%= link_to current_user.first_name, edit_user_registration_path %></li>
-              <li><%= link_to 'Sign out', destroy_user_session_path %></li>
+              <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
             <% else %>
               <li><%= link_to "Log in", new_user_session_path %></li>
               <li><%= link_to "Sign up", new_user_registration_path %></li>
