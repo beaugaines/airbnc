@@ -1,24 +1,27 @@
 <img src='http://placehold.it/1130x200'>
 <div class='col-md-12'>
-<div class='col-md-6'>
-    <h1><%= @room.title %></h1>
-    <p><%= @room.city %>, <%= @room.country %> - <%= pluralize(rand(1..15),'review') %> - user img</p>
-    <p>Private - guest# - bed#</p>
-    <p><%= @room.description %></p>
-    <p>view</p>
-    <p>map</p>
+    <div class='col-md-8'>
+        <h1><%= @room.title %></h1>
+        <p><%= @room.city %>, <%= @room.country %> - <%= pluralize(rand(1..15),'review') %> - user img</p>
+        <p>Private - guest# - bed#</p>
+        <p><%= @room.description %></p>
+        <p>view</p>
+        <p>map</p>
+    </div>
+    <div class='col-md-2'>
+        <h1>price</h1>
+        <p>favorite</p>
+    </div>
+    <div class='col-md-2'>
+        </br>
+        <%= link_to "Update info", edit_room_path(@room), class: 'btn btn-info' %>
+        <%= link_to "Delete room", @room ,method: :delete , class: 'btn btn-danger' %>
+    </div>
 </div>
-<div class='col-md-2'>
-    <h1>price</h1>
-    <p>favorite</p>
-</div>
-<div class='col-md-2'>
-    </br>
-    <%= link_to "Update info", edit_room_path(@room), class: 'btn btn-info' %>
-    <%= link_to "Delete room", @room ,method: :delete , class: 'btn btn-danger' %>
-</div>
-</div>
-<div class='col-md-10'>
-    <h2>Rewiews</h2> 
-    <%= render @room.reviews %>
+<div class='col-md-12'>
+    <h2>Reviews</h2>
+    <%= render 'reviews/form', review: Review.new, post: @review %>
+    <div class='col-md-12 review'>
+        <%= render @room.reviews %>
+    </div>
 </div>
