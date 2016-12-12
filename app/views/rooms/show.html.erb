@@ -20,7 +20,13 @@
 </div>
 <div class='col-md-12'>
     <h2>Reviews</h2>
-    <%= render 'reviews/form', review: Review.new, post: @review %>
+    <%= form_for [@room, @new_review] do |f| %>
+        <div class="form-group">
+            <%= f.label :body, class: 'sr-only' %>
+            <%= f.text_field :body, class: 'form-control', placeholder: "Enter a new review" %>
+        </div>
+        <%= f.submit "Submit Review", class: 'btn btn-default pull-right' %>
+    <% end %>
     <div class='col-md-12 review'>
         <%= render @room.reviews %>
     </div>

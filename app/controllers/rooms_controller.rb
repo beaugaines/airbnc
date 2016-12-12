@@ -5,6 +5,7 @@ class RoomsController < ApplicationController
 
   def show
     @room = Room.find(params[:id])
+    @new_review = Review.new
   end
 
   def new
@@ -20,12 +21,12 @@ class RoomsController < ApplicationController
       render :new
     end
   end
-  
+
   def edit
     @room = Room.find(params[:id])
-    
+
   end
-  
+
   def update
     @room = Room.find(params[:id])
     if @room.update(room_params)
@@ -36,13 +37,13 @@ class RoomsController < ApplicationController
       render :edit
     end
   end
-  
+
   def destroy
     @room = Room.find(params[:id])
     if @room.destroy
       flash[:notice] = "The room was deleted"
       redirect_to root_path
-    else 
+    else
       flash[:alert] = "Something's worng, please try again."
       render :show
     end
