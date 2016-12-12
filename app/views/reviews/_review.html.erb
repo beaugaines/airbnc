@@ -1,3 +1,8 @@
 <%= content_tag :div, class: 'media', id: "reviews-#{review.room.id}" do %>
-    <%= review.body %>
+    <div class='col-md-10'>
+        <%= review.body %>
+    </div>
+    <div class='col-md-2'>
+        <%= link_to "Delete Review", [review.room, review], method: :delete, class: 'btn btn-danger' %>
+    </div>
 <% end %>
