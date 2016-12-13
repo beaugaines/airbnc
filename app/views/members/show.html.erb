@@ -1,0 +1,21 @@
+<div class='col-md-12'>
+    <div class='col-md-3'>
+        <%= image_tag current_user.gravatar_url(:size => 230), class: 'user_profile' %>
+        <p>Verified info</p>
+        <p>Government ID</p>
+        <p>Email address</p>
+        <p>Phone number</p>
+        <p>Learn more >></p>
+        <p>About me</p>
+        <p>Languages</p>
+    </div>
+    <div class='col-md-9'>
+        <h2>Hey, I'm <%= @user.first_name.upcase %>!</h2>
+        <h3>location · Joined in <%= @user.created_at.strftime("%B %Y") %> </h3>
+        <p class="icon-note report"> Report this user</p>
+        <p>Introduction</p>
+        <div class='col-md-3 superhost'><img src="http://www.digitalcare.org/wp-content/uploads/2016/04/superhost.png" alt="Superhost img" height="50" weight="50">Superhost</div>
+        <div class='col-md-2 reviews'><p>Review</p></div>
+        <div class='col-md-3'><img src="https://static1.squarespace.com/static/55957799e4b0892edbf385bf/t/55f9d587e4b0f1d98227b742/1442515864422/" alt="Superhost img" height="50" weight="50">Verified</div>
+    </div>
+</div>

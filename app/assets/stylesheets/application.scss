@@ -40,3 +40,32 @@ body {
   height: 40px;
   margin-top: 5px;
 }
+
+.user_profile {
+  float: left;
+  margin-right: 30px;
+}
+
+.icon-note.report {
+  color: rgb(160,160,160);
+  margin-bottom: 40px;
+}
+
+.col-md-3.superhost {
+  margin-left: -28px;
+}
+
+.col-md-2.reviews {
+  height: 50px;
+  width: 50px;
+  background-color: rgb(255,178,102);
+  border-bottom: 25px solid rgb(255,153,51);
+  padding-top: 15px;
+  margin-left: -50px;
+  margin-right: 50px;
+}
+
+.col-md-2.reviews p {
+  position: relative;
+  left: 45px;
+}
