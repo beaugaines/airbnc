@@ -42,7 +42,6 @@ body {
 }
 
 .user_profile {
-  float: left;
   margin-right: 30px;
 }
 
@@ -62,10 +61,55 @@ body {
   border-bottom: 25px solid rgb(255,153,51);
   padding-top: 15px;
   margin-left: -50px;
-  margin-right: 50px;
+  margin-right: 130px;
 }
 
 .col-md-2.reviews p {
   position: relative;
   left: 45px;
+}
+
+.verified {
+  margin-left: -45px;
+}
+
+.verified-info {
+  border-style: solid;
+  border-color: rgb(192,192,192);
+  margin-top: 20px;
+}
+
+.about {
+  border-style: solid;
+  border-color: rgb(192,192,192);
+  margin-top: 20px;
+}
+
+.verified-info p {
+  height: 40px;
+  padding-left: 20px;
+  padding-top: 10px;
+  margin-top: 0px;
+}
+
+.verified-infop {
+  background-color: rgb(192,192,192);
+  margin-top: 20px;
+}
+
+.about p {
+  height: 40px;
+  padding-left: 20px;
+  padding-top: 10px;
+}
+
+.aboutp {
+  background-color: rgb(192,192,192);
+}
+
+.icon-check {
+  float: right;
+  position: relative;
+  top: -40px;
+  right: 20px;
 }
