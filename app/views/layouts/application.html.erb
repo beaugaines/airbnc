@@ -22,7 +22,7 @@
             <li><%= link_to "Help",   '#' %></li>
             <li><%= link_to 'Become a Host', '#' %></li>
             <% if user_signed_in? %>
-              <li><%= link_to user_show_path(current_user.id) do %>
+              <li><%= link_to user_path(current_user) do %>
                 <%= image_tag current_user.gravatar_url, id: 'userimg' %>
                 <% end %>
               </li>

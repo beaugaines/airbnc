@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161209215336) do
+ActiveRecord::Schema.define(version: 20161212161823) do
+
+  create_table "images", force: :cascade do |t|
+    t.integer  "room_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.string   "file_file_name"
+    t.string   "file_content_type"
+    t.integer  "file_file_size"
+    t.datetime "file_updated_at"
+    t.index ["room_id"], name: "index_images_on_room_id"
+  end
 
   create_table "reviews", force: :cascade do |t|
     t.integer  "user_id"
