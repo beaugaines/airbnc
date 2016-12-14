@@ -10,6 +10,7 @@ class RoomsController < ApplicationController
 
   def new
     @room = Room.new
+    3.times { @room.images.build }
   end
 
   def create
@@ -51,6 +52,7 @@ class RoomsController < ApplicationController
 
   private
   def room_params
-    params.require(:room).permit(:title, :description, :city, :country, :latitude, :longitude)
+    params.require(:room).permit(:title, :description, :city, :country, :latitude, :longitude,
+      images_attributes: [:file])
   end
 end

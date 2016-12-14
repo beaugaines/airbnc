@@ -1,4 +1,4 @@
-done - user profile page 
+done - user profile page
 
 done - room creation / edit / delete
 
@@ -11,3 +11,7 @@ done - room creation / edit / delete
 - fix google map display issue
 
 - can non-host users have rooms?
+
+- refactor image upload with cocoon
+
+- delayed_paperclip
