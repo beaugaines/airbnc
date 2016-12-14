@@ -24,4 +24,4 @@
 /config/application.yml
 
 # ignore uploaded paperclip images
-public/system/images
+public/system/images/*
