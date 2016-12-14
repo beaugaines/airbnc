@@ -4,13 +4,15 @@
     <%= f.text_field :title %>
     <%= f.text_field :description %>
 
-    <%= f.fields_for :images do |image| %>
-       <div>
-         <%= image.label :image %>
-         <%= image.file_field :file %>
-       </div>
-    <% end %>
+    <div id="images">
+      <%= f.fields_for :images do |image| %>
+        <%= render 'image_fields', f: image %>
+      <% end %>
 
+      <div class="links">
+        <%= link_to_add_association 'add image', f, :images %>
+      </div>
+    </div>
 
     <div class="geocomplete">
       <%= label_tag :user_location, 'Enter your city' %>

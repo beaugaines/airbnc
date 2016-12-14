@@ -10,7 +10,7 @@ class RoomsController < ApplicationController
 
   def new
     @room = Room.new
-    3.times { @room.images.build }
+    @room.images.build
   end
 
   def create

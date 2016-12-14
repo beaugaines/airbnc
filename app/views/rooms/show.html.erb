@@ -1,8 +1,8 @@
-<img src='http://placehold.it/1130x200'>
+<%= image_tag(@room.images.last.file.url(:medium)) %>
 <div class='col-md-12'>
     <div class='col-md-8'>
         <h1><%= @room.title %></h1>
-        <p><%= @room.city %>, <%= @room.country %> - <%= pluralize(rand(1..15),'review') %> - user img</p>
+        <p><%= @room.city %>, <%= @room.country %> - <%= pluralize(@room.reviews.count,'review') %> - user img</p>
         <p>Private - guest# - bed#</p>
         <p><%= @room.description %></p>
         <p>view</p>

@@ -22,3 +22,6 @@
 
 # Ignore application configuration
 /config/application.yml
+
+# ignore uploaded paperclip images
+public/system/images
