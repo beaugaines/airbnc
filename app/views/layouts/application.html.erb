@@ -8,6 +8,7 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_API_KEY'] %>&libraries=places"></script>
   <%= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/geocomplete/1.7.0/jquery.geocomplete.min.js' %>
   <%= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/jquery.googlemap/1.5/jquery.googlemap.min.js' %>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
 </head>
 <body>
   <header class="navbar navbar-fixed-top navbar-inverse">
@@ -21,7 +22,10 @@
             <li><%= link_to "Help",   '#' %></li>
             <li><%= link_to 'Become a Host', '#' %></li>
             <% if user_signed_in? %>
-              <li><%= image_tag current_user.gravatar_url, id: 'userimg' %></li>
+              <li><%= link_to user_path(current_user) do %>
+                <%= image_tag current_user.gravatar_url, id: 'userimg' %>
+                <% end %>
+              </li>
               <li><%= link_to current_user.first_name, edit_user_registration_path %></li>
               <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
             <% else %>
