@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161212161823) do
+ActiveRecord::Schema.define(version: 20161216151438) do
 
   create_table "images", force: :cascade do |t|
     t.integer  "room_id"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20161212161823) do
     t.string   "file_content_type"
     t.integer  "file_file_size"
     t.datetime "file_updated_at"
+    t.boolean  "file_processing"
     t.index ["room_id"], name: "index_images_on_room_id"
   end
 
