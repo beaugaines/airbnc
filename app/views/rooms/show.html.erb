@@ -1,4 +1,45 @@
-<%= image_tag(@room.images.last.file.url(:medium)) %>
+<div id='carousel-example-generic' class='carousel slide' data-ride="carousel">
+    <ol class='carousel-indicators'>
+        <% for x in 0..(count_imgs(@room) - 1) %>
+            <% if x == 0 %>
+                <li data-target='#carousel-example-generic' data-slide-to=x class='active'></li>
+            <% else %>
+                <li data-target='#carousel-example-generic' data-slide-to=x></li>
+            <% end %>
+        <% end %>
+    </ol>
+    <div class='carousel-inner' role='listbox'>
+        <% for x in 0..(count_imgs(@room) - 1) %>
+            <% if x == 0 %>
+                <div class='item active'>
+                    <%= image_tag(file_url(x), :alt=>file_name(x)) %>
+                    <div class='carousel-caption'>
+                        <h3>
+                            <%= file_name(x) %>
+                        </h3>
+                    </div>
+                </div>
+            <% else %>
+                <div class='item'>
+                    <%= image_tag(file_url(x), :alt=>file_name(x)) %>
+                    <div class='carousel-caption'>
+                        <h3>
+                            <%= file_name(x) %>
+                        </h3>
+                    </div>
+                </div>
+            <% end %>
+        <% end %>
+    </div>
+    <a class='left carousel-control' href='#carousel-example-generic' role='button' data-slide='prev'>
+        <span class='glyphicon glyphicon-chevron-left' aria-hidden='true'></span>
+        <span class='sr-only'>Previous</span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
 <div class='col-md-12'>
     <div class='col-md-8'>
         <h1><%= @room.title %></h1>
@@ -12,11 +53,13 @@
         <h1>price</h1>
         <p>favorite</p>
     </div>
-    <div class='col-md-2'>
-        </br>
-        <%= link_to "Update info", edit_room_path(@room), class: 'btn btn-info' %>
-        <%= link_to "Delete room", @room ,method: :delete , class: 'btn btn-danger' %>
-    </div>
+    <% if @room.user_id == current_user.id %>
+        <div class='col-md-2'>
+            </br>
+            <%= link_to "Update info", edit_room_path(@room), class: 'btn btn-info' %>
+            <%= link_to "Delete room", @room ,method: :delete , class: 'btn btn-danger' %>
+        </div>
+    <% end %>
 </div>
 <div class='col-md-12'>
     <h2>Reviews</h2>

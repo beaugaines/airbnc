@@ -4,4 +4,6 @@ class Image < ApplicationRecord
   validates_attachment :file, presence: true,
     content_type: { content_type: ['image/jpeg', 'image/png', 'image/gif'] },
     size: { in: 0..4.megabytes }
+    
+  process_in_background :file
 end

@@ -2,14 +2,18 @@ done - user profile page
 
 done - room creation / edit / delete
 
-done refactor image upload with cocoon
+done - refactor image upload with cocoon
 
-done add images to rooms
+done - add images to rooms
 
-done connect rooms to google maps
+done - connect rooms to google maps
 
-done add reviews
+done - add reviews
 
+
+need check - delayed_paperclip for background processing of images
+
+need check (indicator doesn't work) - display images on room#show view using Bootstrap carousel
 
 
 - fix google map display issue
@@ -17,9 +21,3 @@ done add reviews
 - add avatar to user model
 
 - can non-host users have rooms?
-
-- delayed_paperclip for background processing of images
-
-- display images on room#show view using Bootstrap carousel
-
-
