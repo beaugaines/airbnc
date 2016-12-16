@@ -14,6 +14,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'paperclip'
 gem 'cocoon'
+gem 'delayed_paperclip'
 
 group :development, :test do
   gem 'byebug', platform: :mri
