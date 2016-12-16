@@ -10,11 +10,17 @@ done - connect rooms to google maps
 
 done - add reviews
 
+done - delayed_paperclip for background processing of images
 
-need check - delayed_paperclip for background processing of images
+done - display images on room#show view using Bootstrap carousel
 
-need check (indicator doesn't work) - display images on room#show view using Bootstrap carousel
+- add fallback image for delayed_paperclip
 
+- pundit for authorizatioon
+
+- improve styles
+
+- add counter caches for image and review count
 
 - fix google map display issue
 

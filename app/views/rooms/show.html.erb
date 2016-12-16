@@ -1,34 +1,17 @@
 <div id='carousel-example-generic' class='carousel slide' data-ride="carousel">
     <ol class='carousel-indicators'>
-        <% for x in 0..(count_imgs(@room) - 1) %>
-            <% if x == 0 %>
-                <li data-target='#carousel-example-generic' data-slide-to=x class='active'></li>
-            <% else %>
-                <li data-target='#carousel-example-generic' data-slide-to=x></li>
-            <% end %>
+        <% @room.images.each_with_index do |img, idx| %>
+           <li data-target='#carousel-example-generic' data-slide-to=<%= idx %> class=<%= 'active' if idx == 0 %>></li>
         <% end %>
     </ol>
     <div class='carousel-inner' role='listbox'>
-        <% for x in 0..(count_imgs(@room) - 1) %>
-            <% if x == 0 %>
-                <div class='item active'>
-                    <%= image_tag(file_url(x), :alt=>file_name(x)) %>
-                    <div class='carousel-caption'>
-                        <h3>
-                            <%= file_name(x) %>
-                        </h3>
-                    </div>
-                </div>
-            <% else %>
-                <div class='item'>
-                    <%= image_tag(file_url(x), :alt=>file_name(x)) %>
-                    <div class='carousel-caption'>
-                        <h3>
-                            <%= file_name(x) %>
-                        </h3>
-                    </div>
-                </div>
-            <% end %>
+        <% @room.images.each_with_index do |img, idx| %>
+            <div class="item <%= 'active' if idx == 0 %>">
+              <%= image_tag(img.file.url(:medium), alt: img.file.instance.file_file_name) %>
+              <div class="carousel-caption">
+                  <h3><%= img.file.instance.file_file_name %></h3>
+              </div>
+            </div>
         <% end %>
     </div>
     <a class='left carousel-control' href='#carousel-example-generic' role='button' data-slide='prev'>
