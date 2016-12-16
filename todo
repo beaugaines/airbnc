@@ -14,7 +14,9 @@ done - delayed_paperclip for background processing of images
 
 done - display images on room#show view using Bootstrap carousel
 
-- add fallback image for delayed_paperclip
+done add fallback image for delayed_paperclip
+
+- update image on room show view when finished processing
 
 - pundit for authorizatioon
 
