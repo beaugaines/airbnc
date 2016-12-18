@@ -20,37 +20,57 @@
         <span class="sr-only">Next</span>
     </a>
 </div>
-<div class='col-md-12'>
-    <div class='col-md-8'>
+
+<div class='col-md-8 show_room_info'>
+    <div class='col-md-10'>
         <h1><%= @room.title %></h1>
-        <p><%= @room.city %>, <%= @room.country %> - <%= pluralize(@room.reviews.count,'review') %> - user img</p>
-        <p>Private - guest# - bed#</p>
-        <p><%= @room.description %></p>
-        <p>view</p>
-        <p>map</p>
+        <p><%= @room.city %>, <%= @room.country %> - <%= pluralize(@room.reviews.count,'review') %></p>
     </div>
-    <div class='col-md-2'>
+    <div class='col-md-2 room_ownerimg'>
+        <%= image_tag @room_owner.gravatar_url, id: 'room_ownerimg' %>
+    </div>
+    <div class='col-md-12'>
+        <p>Private - guest# - bed#</p>
+    </div>
+    <div class='col-md-12'>
+        <p>Room detail</p>
+    </div>
+    <div class='col-md-12'>
+        <p><%= @room.description %></p>
+    </div>
+    <div class='col-md-12'>
+        <h2>Reviews</h2>
+        <%= form_for [@room, @new_review] do |f| %>
+            <div class="form-group">
+                <%= f.label :body, class: 'sr-only' %>
+                <%= f.text_field :body, class: 'form-control', placeholder: "Enter a new review" %>
+            </div>
+            <%= f.submit "Submit Review", class: 'btn btn-default pull-right' %>
+        <% end %>
+        <div class='col-md-12 review'>
+            <%= render @room.reviews %>
+        </div>
+    </div>
+    
+</div>
+<div class='col-md-4 room_show_price'>
+    <% if @room.user_id == current_user.id %>
+        <%= link_to "Update info", edit_room_path(@room), class: 'btn btn-info' %>
+        <%= link_to "Delete room", @room ,method: :delete , class: 'btn btn-danger' %>
+    <% else %>
         <h1>price</h1>
         <p>favorite</p>
-    </div>
-    <% if @room.user_id == current_user.id %>
-        <div class='col-md-2'>
-            </br>
-            <%= link_to "Update info", edit_room_path(@room), class: 'btn btn-info' %>
-            <%= link_to "Delete room", @room ,method: :delete , class: 'btn btn-danger' %>
-        </div>
     <% end %>
 </div>
-<div class='col-md-12'>
-    <h2>Reviews</h2>
-    <%= form_for [@room, @new_review] do |f| %>
-        <div class="form-group">
-            <%= f.label :body, class: 'sr-only' %>
-            <%= f.text_field :body, class: 'form-control', placeholder: "Enter a new review" %>
-        </div>
-        <%= f.submit "Submit Review", class: 'btn btn-default pull-right' %>
-    <% end %>
-    <div class='col-md-12 review'>
-        <%= render @room.reviews %>
-    </div>
-</div>
+
+
+
+
+
+
+
+
+
+
+
+

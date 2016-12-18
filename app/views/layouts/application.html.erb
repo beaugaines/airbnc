@@ -23,7 +23,7 @@
             <li><%= link_to 'Become a Host', '#' %></li>
             <% if user_signed_in? %>
               <li><%= link_to user_path(current_user) do %>
-                <%= image_tag current_user.gravatar_url, id: 'userimg' %>
+                <%= image_tag current_user.gravatar_url, id: 'room_ownerimg' %>
                 <% end %>
               </li>
               <li><%= link_to current_user.first_name, edit_user_registration_path %></li>
