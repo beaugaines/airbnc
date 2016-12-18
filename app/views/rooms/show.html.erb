@@ -8,9 +8,6 @@
         <% @room.images.each_with_index do |img, idx| %>
             <div class="item <%= 'active' if idx == 0 %>">
               <%= image_tag(img.file.url(:medium), alt: img.file.instance.file_file_name) %>
-              <div class="carousel-caption">
-                  <h3><%= img.file.instance.file_file_name %></h3>
-              </div>
             </div>
         <% end %>
     </div>
