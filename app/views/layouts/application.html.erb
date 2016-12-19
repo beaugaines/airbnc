@@ -13,32 +13,36 @@
 <body>
   <header class="navbar navbar-fixed-top navbar-inverse">
     <div class="container">
-      <div class='col-md-6'>
-        <%= link_to image_tag("http://placehold.it/70x70?text=A"), root_path, id: "logo" %>
-      </div>
-      <nav>
+      <div class="row">
         <div class='col-md-6'>
-          <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to "Help",   '#' %></li>
-            <li><%= link_to 'Become a Host', '#' %></li>
-            <% if user_signed_in? %>
-              <li><%= link_to user_path(current_user) do %>
-                <%= image_tag current_user.gravatar_url, id: 'room_ownerimg' %>
-                <% end %>
-              </li>
-              <li><%= link_to current_user.first_name, edit_user_registration_path %></li>
-              <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
-            <% else %>
-              <li><%= link_to "Log in", new_user_session_path %></li>
-              <li><%= link_to "Sign up", new_user_registration_path %></li>
-            <% end %>
-          </ul>
+          <%= link_to image_tag("http://placehold.it/70x70?text=A"), root_path, id: "logo" %>
         </div>
-      </nav>
+        <nav>
+          <div class='col-md-6'>
+            <ul class="nav navbar-nav navbar-right">
+              <li><%= link_to "Help",   '#' %></li>
+              <li><%= link_to 'Become a Host', '#' %></li>
+              <% if user_signed_in? %>
+                <li><%= link_to user_path(current_user) do %>
+                  <%= image_tag current_user.gravatar_url, id: 'room_ownerimg' %>
+                  <% end %>
+                </li>
+                <li><%= link_to current_user.first_name, edit_user_registration_path %></li>
+                <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
+              <% else %>
+                <li><%= link_to "Log in", new_user_session_path %></li>
+                <li><%= link_to "Sign up", new_user_registration_path %></li>
+              <% end %>
+            </ul>
+          </div>
+        </nav>
+      </div>
     </div>
   </header>
   <div class="container">
-    <%= yield %>
+    <main>
+      <%= yield %>
+    </main>
   </div>
 </body>
 </html>
