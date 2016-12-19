@@ -1,11 +1,11 @@
 class RoomsController < ApplicationController
-  
+
   def index
     @rooms = Room.all
   end
 
   def show
-    @room = Room.find(params[:id])
+    @room = Room.includes(:user, :reviews).find(params[:id])
     @new_review = Review.new
   end
 
@@ -60,13 +60,13 @@ class RoomsController < ApplicationController
     params.require(:room).permit(:title, :description, :city, :country, :latitude, :longitude,
       images_attributes: [:file])
   end
-  
+
   def check_role
     if current_user.role != 'host'
       raise 'You are not a host'
     end
   end
-  
+
   def check_owner(room)
     if room.user_id != current_user.id
       raise 'You are not the owner'

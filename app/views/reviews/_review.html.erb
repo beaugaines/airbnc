@@ -1,8 +1,26 @@
 <%= content_tag :div, class: 'media', id: "reviews-#{review.room.id}" do %>
-    <div class='col-md-10'>
+    <div class='col-md-12'>
+        <div class='col-md-2'>
+            <%= image_tag find_user(review.user_id).gravatar_url, id: 'review_ownerimg'  %>
+        </div>
+        <div class='col-md-10'>
+            <h4><%= find_user(review.user_id).first_name %></h4>
+            <h4 class='review_show_created_at'><%= review.created_at.strftime('%B %Y') %></h4>
+        </div>
+    </div>
+    
+    <div class='col-md-12'>
         <%= review.body %>
     </div>
-    <div class='col-md-2'>
-        <%= link_to "Delete Review", [review.room, review], method: :delete, class: 'btn btn-danger' %>
+    <div class='col-md-12'>
+        <%= link_to "Delete Review", [review.room, review], method: :delete, class: 'btn btn-danger delete_review' %>
+        <div class='btn btn-default helpful_btn'>
+            <i class='icon-like'></i>
+            <span>Helpful</span>
+        </div>
+        <div class='btn btn-default report_btn'>
+            <i class='icon-flag'></i>
+            <span>Report</span>
+        </div>
     </div>
 <% end %>
