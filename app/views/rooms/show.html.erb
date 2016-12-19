@@ -24,7 +24,7 @@
 <div class='col-md-8 show_room_info'>
     <div class='col-md-10'>
         <h1><%= @room.title %></h1>
-        <p><%= @room.city %>, <%= @room.country %> - <%= pluralize(@room.reviews.count,'review') %></p>
+        <p><%= @room.city %>, <%= @room.country %> - <%= pluralize(@room.reviews_count,'review') %></p>
     </div>
     <div class='col-md-2 room_ownerimg'>
         <%= image_tag @room.user.gravatar_url, id: 'room_ownerimg' %>
