@@ -20,6 +20,7 @@
 
 body {
   margin-top: 100px;
+  margin-bottom: 20px;
 }
 
 main {
@@ -42,7 +43,12 @@ main {
 
 #userimg {
   height: 40px;
-  margin-top: 5px;
+  position: relative;
+  top: -5px;
+}
+
+.nav.navbar-nav.navbar-right {
+  margin-top: 10px;
 }
 
 .user_profile {
@@ -83,6 +89,8 @@ main {
   margin-top: 20px;
 }
 
+
+
 .about {
   border-style: solid;
   border-color: rgb(192,192,192);
@@ -116,6 +124,19 @@ main {
   position: relative;
   top: -40px;
   right: 20px;
+}
+
+.icon-magnifier {
+  color: white;
+  margin-right: 10px;
+}
+
+.search_box_span {
+  margin-top: 12px;
+}
+
+.search_box {
+  float: right;
 }
 
 .carousel-inner .item img {

@@ -6,7 +6,7 @@
                     <p>price - favorite tag</p>
                     <%=link_to image_tag("http://placehold.it/350x250"), room_path(room) %>
                     <h1 class='roomname'><%= room.title %></h1>
-                    <p>Private - 1 guest - <%= pluralize(rand(1..15),'review') %> - user img</p>
+                    <p>Private - 1 guest - <%= pluralize(room.reviews_count, 'views') %> - user img</p>
                 </div>
             </div>
         <% end %>
