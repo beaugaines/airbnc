@@ -15,7 +15,7 @@
     <div class='col-md-12'>
         <%= link_to "Delete Review", [review.room, review], method: :delete, class: 'btn btn-danger delete_review' %>
         <% if helpful = find_user(current_user.id).helpful_for(review) %>
-            <%= link_to review_helpful_path(review), class:'btn btn-default helpful_btn', method: :delete do %>
+            <%= link_to review_helpful_path(review), class:'btn btn-default unhelpful_btn', method: :delete do %>
                 <i class='icon-dislike'></i>&nbsp; Unhelpful
             <% end %>
         <% else %>

@@ -1,12 +1,28 @@
 <div class='row'>
     <div class='col-md-8'>
-        <% @rooms.each do |room| %>
-            <div class='col-md-6'>
+        <% @rooms.each_with_index do |room, index| %>
+            <div class='col-md-6 room_index_page'>
                 <div class='room'>
                     <p>price - favorite tag</p>
-                    <%=link_to image_tag("http://placehold.it/350x250"), room_path(room) %>
+                    <div id='carousel-example-generic-<%= index %>' class='carousel slide' data-ride="carousel">
+                        <div class='carousel-inner room_index_page' role='listbox'>
+                            <% room.images.each_with_index do |img, idx| %>
+                                <div class="item <%= 'active' if idx == 0 %>">
+                                  <%= image_tag(img.file.url(:medium), alt: img.file.instance.file_file_name) %>
+                                </div>
+                            <% end %>
+                        </div>
+                        <a class='left carousel-control' href='#carousel-example-generic-<%= index %>' role='button' data-slide='prev'>
+                            <span class='glyphicon glyphicon-chevron-left' aria-hidden='true'></span>
+                            <span class='sr-only'>Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-example-generic-<%= index %>" role="button" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
                     <h1 class='roomname'><%= room.title %></h1>
-                    <p>Private - 1 guest - <%= pluralize(room.reviews_count, 'views') %> - user img</p>
+                    <p>Private - 1 guest - <%= pluralize(room.reviews_count, 'views') %> - <%= image_tag find_user(room.user_id).gravatar_url, id: 'room_index_userimg' %></p>
                 </div>
             </div>
         <% end %>

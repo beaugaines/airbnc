@@ -26,6 +26,7 @@ $(document).on('turbolinks:load', function() {
     details: 'form',
     detailsAttribute: 'data-geo'
   });
+  
 
 });
 
