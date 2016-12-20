@@ -14,10 +14,15 @@
     </div>
     <div class='col-md-12'>
         <%= link_to "Delete Review", [review.room, review], method: :delete, class: 'btn btn-danger delete_review' %>
-        <div class='btn btn-default helpful_btn'>
-            <i class='icon-like'></i>
-            <span>Helpful</span>
-        </div>
+        <% if helpful = find_user(current_user.id).helpful_for(review) %>
+            <%= link_to review_helpful_path(review), class:'btn btn-default helpful_btn', method: :delete do %>
+                <i class='icon-dislike'></i>&nbsp; Unhelpful
+            <% end %>
+        <% else %>
+            <%= link_to review_helpfuls_path(review), class:'btn btn-default helpful_btn', method: :post do %>
+                <i class='icon-like'></i>&nbsp; Helpful
+            <% end %>
+        <% end %>
         <div class='btn btn-default report_btn'>
             <i class='icon-flag'></i>
             <span>Report</span>
