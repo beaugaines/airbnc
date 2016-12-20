@@ -16,6 +16,8 @@ done - display images on room#show view using Bootstrap carousel
 
 done add fallback image for delayed_paperclip
 
+need check - add search feature
+
 - update image on room show view when finished processing
 
 - pundit for authorizatioon
