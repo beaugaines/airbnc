@@ -20,6 +20,7 @@
 
 body {
   margin-top: 100px;
+  margin-bottom: 20px;
 }
 
 main {
@@ -42,11 +43,24 @@ main {
 
 #userimg {
   height: 40px;
-  margin-top: 5px;
+  position: relative;
+  top: -5px;
+}
+
+.nav.navbar-nav.navbar-right {
+  margin-top: 10px;
 }
 
 .user_profile {
   margin-right: 30px;
+}
+
+.room_index_page {
+  margin-bottom: 20px;
+}
+
+.room_index_img img {
+  height: 200px;
 }
 
 .icon-note.report {
@@ -83,6 +97,8 @@ main {
   margin-top: 20px;
 }
 
+
+
 .about {
   border-style: solid;
   border-color: rgb(192,192,192);
@@ -118,6 +134,27 @@ main {
   right: 20px;
 }
 
+.icon-magnifier {
+  color: white;
+  margin-right: 10px;
+}
+
+.search_box_span {
+  margin-top: 12px;
+}
+
+.search_box {
+  float: right;
+}
+
+#room_index_userimg {
+  border-radius: 50%;
+}
+
+.carousel-inner.room_index_page .item img {
+  height: 200px;
+}
+
 .carousel-inner .item img {
     height: 300px;
     margin: auto;
@@ -135,11 +172,21 @@ main {
   margin-right: 10px;
 }
 
-.report_btn,
-.helpful_btn {
+.report_btn{
   color: rgb(192,192,192);
 }
 
+.helpful_btn {
+  color: rgb(255,255,255);
+  background-color: rgb(0,200,0);
+}
+
+.unhelpful_btn {
+  color: rgb(255,255,255);
+  background-color: rgb(200,0,0);
+}
+
+.unhelpful_btn,
 .report_btn,
 .helpful_btn,
 .delete_review {
@@ -150,4 +197,16 @@ main {
 
 .show_room_info {
     padding: 0px;
+}
+
+.room_show_price {
+  margin-top: 20px;
+}
+
+.alert-notice {
+  @extend .alert-success;
+}
+
+.alert-alert {
+  @extend .alert-warning;
 }

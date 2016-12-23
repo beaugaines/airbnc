@@ -9,4 +9,9 @@ class User < ApplicationRecord
   has_many :rooms
   has_gravatar
   has_many :reviews
+  has_many :helpfuls
+  
+  def helpful_for(review)
+    helpfuls.where(review_id: review.id).first
+  end
 end

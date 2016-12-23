@@ -16,6 +16,14 @@ done - display images on room#show view using Bootstrap carousel
 
 done add fallback image for delayed_paperclip
 
+need check - add search feature
+
+need check - helpful model and feature
+
+need check - can non-host users have rooms?
+
+need check - add carousel to rooms-index-view
+
 - update image on room show view when finished processing
 
 - pundit for authorizatioon
@@ -28,4 +36,4 @@ done add fallback image for delayed_paperclip
 
 - add avatar to user model
 
-- can non-host users have rooms?
+

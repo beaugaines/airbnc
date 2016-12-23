@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161219153424) do
+ActiveRecord::Schema.define(version: 20161223163352) do
+
+  create_table "helpfuls", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "review_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["review_id"], name: "index_helpfuls_on_review_id"
+    t.index ["user_id"], name: "index_helpfuls_on_user_id"
+  end
 
   create_table "images", force: :cascade do |t|
     t.integer  "room_id"
@@ -27,9 +36,10 @@ ActiveRecord::Schema.define(version: 20161219153424) do
   create_table "reviews", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "room_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
     t.text     "body"
+    t.integer  "helpful_count", default: 0
     t.index ["room_id"], name: "index_reviews_on_room_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
